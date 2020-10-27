@@ -19,10 +19,10 @@ To create an Alpine.js component add an `x-data` custom attribute to any HTML el
 To display a value of an expression, use `x-text` or `x-html` attribute with value containing the expresion, for example `open`.
 
 ## Binding
-To set an attribute value to result of an expression, add an `x-bind` attribute (shorthand starting with : symbol cannot be used in Webflow). For example `x-bind:class` with value `myclass` 
+To set an attribute value to result of an expression, add an `x-bind` attribute (shorthand starting with `:` symbol cannot be used in Webflow). For example `x-bind:class` with value `myclass`
 
 ## Event handlers
-To add an event handler, add a `x-on` custom attribute (shorthand starting with @ symbol cannot be used in Webflow). For example to react on mouse click, add `x-on:click` attribute with value `open = true`.
+To add an event handler, add a `x-on` custom attribute (shorthand starting with `@` symbol cannot be used in Webflow). For example to react to a mouse click, add `x-on:click` attribute with value `open = true`.
 
 ## Modifiers
 Attributes containing a dot `.` character in their name are not allowed in Webflow. To bypass this limitation, use another `:` character instead. For example, add `x-on:click:away` attribute with value `open = false`.
@@ -34,7 +34,9 @@ In Webflow we cannot create a `<template>` element in the designer, and this is 
 Similarly to conditional statements, any element containing `x-for` is automatically converted to `<template>`. For example, to initialize a loop, simply create a div block with `x-for` attribute equal to `item in items`, and `x-bind:key` attribute with value `item`.
 
 ## Cloak
-When refreshing the site the hidden content is briefly displayed, creating an ugly flickering effect. To avoid it we can use an `x-cloak` attribute with any value. In order to make it work, you need to add the following style in HTML Embed to your page:
+When refreshing the site, the hidden content is briefly displayed, creating an ugly flickering effect. To hide an element before Alpine.js is initialized, we can add an `x-cloak` attribute with any value to it.
+
+In order to make it work, you also need to add the following style in HTML Embed to your page:
 
 ```
 <style>
