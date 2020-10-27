@@ -28,7 +28,7 @@ To add an event handler, add a `x-on` custom attribute (shorthand starting with 
 Attributes containing a dot `.` character in their name are not allowed in Webflow. To bypass this limitation, use another `:` character instead. For example, add `x-on:click:away` attribute with value `open = false`.
 
 ## Conditional statements
-In Webflow we cannot create a `<template>` element in the designer, and this is necessary for `x-if` conditional. To solve this issue, this script automatically transforms any element containing `x-if` into `<template>`. For example we can create a conditional Div Block with `x-if` attribute with `open` value.
+In Webflow it's not possible to create a `<template>` element in the designer, and it is necessary for `x-if` conditionals. To solve this issue, this script automatically transforms any element containing `x-if` into `<template>`. For example we can create a conditional Div Block with `x-if` attribute with `open` value.
 
 ## For loops
 Similarly to conditional statements, any element containing `x-for` is automatically converted to `<template>`. For example, to initialize a loop, simply create a div block with `x-for` attribute equal to `item in items`, and `x-bind:key` attribute with value `item`.
