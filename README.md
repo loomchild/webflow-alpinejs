@@ -34,7 +34,7 @@ In Webflow we cannot create a `<template>` element in the designer, and this is 
 Similarly to conditional statements, any element containing `x-for` is automatically converted to `<template>`. For example, to initialize a loop, simply create a div block with `x-for` attribute equal to `item in items`, and `x-bind:key` attribute with value `item`.
 
 ## Cloak
-When refreshing the site, the hidden content is briefly displayed, creating an ugly flickering effect. To hide an element before Alpine.js is initialized, we can add an `x-cloak` attribute with any value to it.
+When refreshing the site, the hidden content is briefly displayed, creating an ugly flickering effect. To hide an element before Alpine.js is initialized, add an `x-cloak` attribute with any value to it.
 
 In order to make it work, you also need to add the following style in HTML Embed to your page:
 
