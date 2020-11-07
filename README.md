@@ -8,8 +8,8 @@ Read my related article on [Medium](https://medium.com/untitled-factory/webflow-
 To initialize Alpine.js in Webflow add the following code at the bottom of the `<body>` element, either globally in Project Settings or via HTML Embed on each page.
 
 ```
-<script src=”https://cdn.jsdelivr.net/gh/loomchild/webflow-alpinejs/index.js"></script>
-<script src=”https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/loomchild/webflow-alpinejs@latest/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 ```
 
 ## Initialize a component
