@@ -57,7 +57,7 @@ This script also simplifies interacting with built-in Webflow components, such a
 
 Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `Slider({ el: '#myslider' })` value and `x-init` attribute with `__init()` value.
 
-The component contains `slide` variable indicating current slide index (read-write) and `slideCount` variable (read-only). It also contains `nextSlide()` and `previousSlide()` convenience methods.
+The component contains `slide` variable indicating current slide index (read/write) and `slideCount` variable (read-only). It also contains `nextSlide()` and `previousSlide()` convenience methods.
 
 ---
 For more information how to use Alpine.js please refer to [the official documentation](https://github.com/alpinejs/alpine). If you notice something not working as expected in Webflow, do not hesitate to report errors here.
