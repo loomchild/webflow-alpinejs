@@ -2,7 +2,9 @@
 
 > A simple script to allow using [Alpine.js](https://github.com/alpinejs/alpine) in [Webflow](https://webflow.com/) designer.
 
-Read my related article on [Medium](https://medium.com/untitled-factory/webflow-alpine-js-d53d77e3293) to learn more. You can also check a [demo site](https://webflow.com/website/alpinejs-demo) for live example.
+To learn the basic usage, read my related tutorial on [Medium](https://medium.com/untitled-factory/webflow-alpine-js-d53d77e3293). To interact with Webflow built-in components, check this article on [Medium]().
+
+You can also check a [demo site](https://webflow.com/website/alpinejs-demo) for a live example.
 
 ## Initialization
 To initialize Alpine.js in Webflow add the following code at the bottom of the `<body>` element, either globally in Project Settings or via HTML Embed on each page.
@@ -47,6 +49,15 @@ In order to make it work, you also need to add the following style in HTML Embed
 ```
 It could be a good idea to create a symbol containing the above code. As a bonus, you can add `.uncloak` class to such elements to make them temporarily visible during development.
 
----
+## Components
 
+This script also simplifies interacting with built-in Webflow components, such as Slider, Tabs or Lightbox.
+
+### Slider
+
+Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `Slider({ el: '#myslider' })` value and `x-init` attribute with `__init()` value.
+
+The component contains `slide` variable indicating current slide index (read-write) and `slideCount` variable (read-only). It also contains `nextSlide()` and `previousSlide()` convenience methods.
+
+---
 For more information how to use Alpine.js please refer to [the official documentation](https://github.com/alpinejs/alpine). If you notice something not working as expected in Webflow, do not hesitate to report errors here.
