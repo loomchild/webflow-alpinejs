@@ -2,7 +2,7 @@
 
 > A simple script to allow using [Alpine.js](https://github.com/alpinejs/alpine) in [Webflow](https://webflow.com/) designer.
 
-To learn the basic usage, read my related tutorial on [Medium](https://medium.com/untitled-factory/webflow-alpine-js-d53d77e3293). To interact with Webflow built-in components, check this article on [Medium]().
+To learn the basic usage, read my related tutorial on [Medium](https://medium.com/untitled-factory/webflow-alpine-js-d53d77e3293). To interact with Webflow built-in components, check this article on [Medium](https://medium.com/untitled-factory/interacting-with-the-webflow-slider-component-using-alpine-js-c154885feaed).
 
 You can also check a [demo site](https://webflow.com/website/alpinejs-demo) for a live example.
 
