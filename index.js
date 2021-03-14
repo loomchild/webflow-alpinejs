@@ -1,7 +1,6 @@
 /* Initialization --------------------------------------------------------- */
 
 function replaceByTemplate (el) {
-  console.log(el)
   const opening = new RegExp('^<' + el.tagName, 'i')
   const closing = new RegExp('</' + el.tagName + '>$', 'i')
 
