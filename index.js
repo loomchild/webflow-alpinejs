@@ -55,6 +55,8 @@ function Slider ({ el }) { // eslint-disable-line no-unused-vars
     slide: 0,
     slideCount: 0,
 
+    // TODO: slideCount should be a getter, hide as private somehow (store all slides)
+
     nextSlide () {
       if (this.slide + 1 < this.slideCount) {
         this.slide++
