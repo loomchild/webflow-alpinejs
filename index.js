@@ -1,6 +1,7 @@
 /* Initialization --------------------------------------------------------- */
 
 function replaceByTemplate (el) {
+  console.log(el)
   const opening = new RegExp('^<' + el.tagName, 'i')
   const closing = new RegExp('</' + el.tagName + '>$', 'i')
 
@@ -44,7 +45,8 @@ document.querySelectorAll('[x-data] *').forEach((el) => {
   replaceDotAttributes(el)
 })
 
-document.querySelectorAll('[x-data] [x-for], [x-data] [x-if]').forEach(replaceByTemplate)
+// Add templates, reverse to treat nested blocks before their parents.
+;[...document.querySelectorAll('[x-data] [x-for], [x-data] [x-if]')].reverse().forEach(replaceByTemplate)
 
 /* Components ------------------------------------------------------------- */
 
