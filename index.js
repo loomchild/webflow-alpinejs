@@ -98,7 +98,7 @@ function Slider ({ el } = {}) { // eslint-disable-line no-unused-vars
       }
 
       Webflow.push(() => {
-        const dots = document.querySelectorAll(`${this.el} .w-slider-dot`)
+        const dots = this.el.querySelectorAll('.w-slider-dot')
         this.slideCount = dots.length
         dots.forEach((dot, index) => {
           setObserver(dot, index)
@@ -106,7 +106,7 @@ function Slider ({ el } = {}) { // eslint-disable-line no-unused-vars
       })
 
       this.$watch('slide', (index) => {
-        const dot = document.querySelector(`${this.el} .w-slider-dot:nth-child(${index + 1})`)
+        const dot = this.el.querySelector(`.w-slider-dot:nth-child(${index + 1})`)
         if (dot && !dot.classList.contains('w-active')) {
           dot.dispatchEvent(new MouseEvent('click', { view: window, bubbles: true, cancelable: true }))
         }
