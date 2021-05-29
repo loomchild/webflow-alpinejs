@@ -14,6 +14,11 @@ To initialize Alpine.js in Webflow add the following code at the bottom of the `
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
 ```
 
+Next, add the following style at the top of the `<body>` element via HTML Embed on each page:
+```
+<link href="https://cdn.jsdelivr.net/gh/loomchild/webflow-alpinejs@latest/style.css" rel="stylesheet">
+```
+
 ## Initialize a component
 To create an Alpine.js component add an `x-data` custom attribute to any HTML element. For example it can contain the value `{ open: false }`.
 
@@ -36,18 +41,7 @@ In Webflow it's not possible to create a `<template>` element in the designer, a
 Similarly to conditional statements, any element containing `x-for` is automatically converted to `<template>`. For example, to initialize a loop, simply create a div block with `x-for` attribute equal to `item in items`, and `x-bind:key` attribute with value `item`.
 
 ## Cloak
-When refreshing the site, the hidden content is briefly displayed, creating an ugly flickering effect. To hide an element before Alpine.js is initialized, add an `x-cloak` attribute with any value to it.
-
-In order to make it work, you also need to add the following style in HTML Embed to your page:
-
-```
-<style>
-[x-cloak]:not(.uncloak) { 
-  display: none;
-}
-</style>
-```
-It could be a good idea to create a symbol containing the above code. As a bonus, you can add `.uncloak` class to such elements to make them temporarily visible during development.
+When refreshing the site, the hidden content is briefly displayed, creating an ugly flickering effect. To hide an element before Alpine.js is initialized, add an `x-cloak` attribute with any value to it. You can add `.uncloak` class to such element to make it temporarily visible during development.
 
 ## Components
 

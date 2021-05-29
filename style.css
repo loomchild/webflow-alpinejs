@@ -1,5 +1,7 @@
-<style>
 [x-cloak]:not(.uncloak) { 
   display: none;
 }
-</style>
+
+html.wf-design-mode [x-data] {
+  outline: 1px dashed #8ac0cf7f;
+}
