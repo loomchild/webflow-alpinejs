@@ -51,9 +51,8 @@ document.querySelectorAll('[x-data] *').forEach((el) => {
 /* Components ------------------------------------------------------------- */
 
 /* Slider */
-function Slider ({ el }) { // eslint-disable-line no-unused-vars
+function Slider ({ el } = {}) { // eslint-disable-line no-unused-vars
   return {
-    el,
     slide: 0,
     slideCount: 0,
 
@@ -72,6 +71,15 @@ function Slider ({ el }) { // eslint-disable-line no-unused-vars
     },
 
     __init () {
+      if (el) {
+        this.el = document.querySelector(el)
+      } else {
+        this.el = this.$el.querySelector('.w-slider')
+      }
+      if (!this.el) {
+        throw new Error('Missing slider component to target')
+      }
+
       const config = { attributes: true, childList: false, subtree: false, attributeFilter: ['class'] }
 
       const setObserver = (target, index) => {
@@ -81,7 +89,7 @@ function Slider ({ el }) { // eslint-disable-line no-unused-vars
           }
 
           mutations.forEach((mutation) => {
-            if (/w-active/.test(mutation.target.className)) {
+            if (mutation.target.classList.contains('w-active')) {
               this.slide = index
             }
           })
@@ -89,18 +97,17 @@ function Slider ({ el }) { // eslint-disable-line no-unused-vars
         observer.observe(target, config)
       }
 
-      // Wait for Webflow init before capturing the dots
-      setTimeout(() => {
+      Webflow.push(() => {
         const dots = document.querySelectorAll(`${this.el} .w-slider-dot`)
         this.slideCount = dots.length
         dots.forEach((dot, index) => {
           setObserver(dot, index)
         })
-      }, 100)
+      })
 
       this.$watch('slide', (index) => {
         const dot = document.querySelector(`${this.el} .w-slider-dot:nth-child(${index + 1})`)
-        if (dot && !/w-active/.test(dot.className)) {
+        if (dot && !dot.classList.contains('w-active')) {
           dot.dispatchEvent(new MouseEvent('click', { view: window, bubbles: true, cancelable: true }))
         }
       })
@@ -132,7 +139,6 @@ function Tabs ({ el } = {}) { // eslint-disable-line no-unused-vars
       } else {
         this.el = this.$el.querySelector('.w-tabs')
       }
-
       if (!this.el) {
         throw new Error('Missing tabs component to target')
       }
