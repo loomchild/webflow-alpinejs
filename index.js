@@ -1,4 +1,5 @@
 /* Initialization --------------------------------------------------------- */
+var Webflow = window.Webflow || [] // eslint-disable-line no-var
 
 function replaceByTemplate (el) {
   const opening = new RegExp('^<' + el.tagName, 'i')
@@ -101,6 +102,70 @@ function Slider ({ el }) { // eslint-disable-line no-unused-vars
         const dot = document.querySelector(`${this.el} .w-slider-dot:nth-child(${index + 1})`)
         if (dot && !/w-active/.test(dot.className)) {
           dot.dispatchEvent(new MouseEvent('click', { view: window, bubbles: true, cancelable: true }))
+        }
+      })
+    }
+  }
+}
+
+/* Tabs */
+function Tabs ({ el } = {}) { // eslint-disable-line no-unused-vars
+  return {
+    tab: 0,
+    tabCount: 0,
+
+    nextTab () {
+      if (this.tab + 1 < this.tabCount) {
+        this.tab++
+      }
+    },
+
+    previousTab () {
+      if (this.tab > 0) {
+        this.tab--
+      }
+    },
+
+    __init () {
+      if (el) {
+        this.el = document.querySelector(el)
+      } else {
+        this.el = this.$el.querySelector('.w-tabs')
+      }
+
+      if (!this.el) {
+        throw new Error('Missing tabs component to target')
+      }
+
+      const config = { attributes: true, childList: false, subtree: false, attributeFilter: ['class'] }
+
+      const setObserver = (target, index) => {
+        const observer = new MutationObserver((mutations) => {
+          if (this.tab === index) {
+            return
+          }
+
+          mutations.forEach((mutation) => {
+            if (mutation.target.classList.contains('w--current')) {
+              this.tab = index
+            }
+          })
+        })
+        observer.observe(target, config)
+      }
+
+      Webflow.push(() => {
+        const tabs = this.el.querySelectorAll('.w-tab-link')
+        this.tabCount = tabs.length
+        tabs.forEach((tab, index) => {
+          setObserver(tab, index)
+        })
+      })
+
+      this.$watch('tab', (index) => {
+        const tab = this.el.querySelector(`.w-tab-link:nth-child(${index + 1})`)
+        if (tab && !tab.classList.contains('w--current')) {
+          tab.dispatchEvent(new MouseEvent('click', { view: window, bubbles: true, cancelable: true }))
         }
       })
     }
