@@ -1,15 +1,11 @@
 {
-  "name": "webflow-alpinejs",
+  "name": "@loomchild/webflow-alpinejs",
   "version": "1.0.0",
   "description": "> A simple script to allow using Alpine.js in Webflow designer.",
-  "devDependencies": {
-    "eslint": "^7.13.0",
-    "eslint-config-standard": "^16.0.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1"
+  "scripts": {
+    "build": "esbuild index.js style.css --bundle --minify --sourcemap --outdir=dist",
+    "serve": "esbuild index.js style.css --bundle --outdir=dist --serve=8001"
   },
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/loomchild/webflow-alpinejs.git"
@@ -19,5 +15,20 @@
   "bugs": {
     "url": "https://github.com/loomchild/webflow-alpinejs/issues"
   },
-  "homepage": "https://github.com/loomchild/webflow-alpinejs"
+  "homepage": "https://github.com/loomchild/webflow-alpinejs",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
+  "dependencies": {
+    "alpinejs": "^3.0.9"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.9",
+    "eslint": "^7.29.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  }
 }
