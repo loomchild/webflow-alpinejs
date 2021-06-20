@@ -10,13 +10,12 @@ You can also check a [demo site](https://webflow.com/website/alpinejs-demo) for 
 To initialize Alpine.js in Webflow add the following code at the bottom of the `<body>` element, either globally in Project Settings or via HTML Embed on each page.
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/loomchild/webflow-alpinejs@latest/index.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@1/dist/index.js"></script>
 ```
 
 Next, add the following style at the top of the `<body>` element via HTML Embed on each page:
 ```
-<link href="https://cdn.jsdelivr.net/gh/loomchild/webflow-alpinejs@latest/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@1/dist/style.css" rel="stylesheet">
 ```
 
 ## Initialize a component
@@ -49,15 +48,15 @@ This script also simplifies interacting with built-in Webflow components, such a
 
 ### Slider
 
-Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `Slider()` value and `x-init` attribute with `__init()` value.
+Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `slider` value.
 
 The component contains `slide` variable indicating current slide index (read/write) and `slideCount` variable (read-only). It also contains `nextSlide()` and `previousSlide()` convenience methods.
 
 ### Tabs
 
-Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `Tabs()` value and `x-init` attribute with `__init()` value.
+Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `tabs` value.
 
 The component contains `tab` variable indicating current tab index (read/write) and `tabCount` variable (read-only). It also contains `nextTab()` and `previousTab()` convenience methods.
 
 ---
-For more information how to use Alpine.js please refer to [the official documentation](https://github.com/alpinejs/alpine). If you notice something not working as expected in Webflow, do not hesitate to report errors here.
+For more information how to use Alpine.js please refer to [the official documentation](http://alpinejs.dev/). If you notice something not working as expected in Webflow, do not hesitate to report errors here.
