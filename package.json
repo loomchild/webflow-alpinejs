@@ -1,11 +1,11 @@
 {
   "name": "@loomchild/webflow-alpinejs",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "> A simple script to allow using Alpine.js in Webflow designer.",
   "scripts": {
     "build": "esbuild index.js style.css --bundle --minify --sourcemap --outdir=dist",
     "serve": "esbuild index.js style.css --bundle --outdir=dist --serve=8001",
-    "prepublish" :"npm run build"
+    "prepublish": "npm run build"
   },
   "publishConfig": {
     "access": "public"
@@ -25,11 +25,11 @@
     "dist/*"
   ],
   "dependencies": {
-    "alpinejs": "^3.0.9"
+    "alpinejs": "^3.2.1"
   },
   "devDependencies": {
-    "esbuild": "^0.12.9",
-    "eslint": "^7.29.0",
+    "esbuild": "^0.12.14",
+    "eslint": "^7.30.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-node": "^11.1.0",
