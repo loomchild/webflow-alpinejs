@@ -1,6 +1,6 @@
 import Alpine from 'alpinejs'
 
-Alpine.data('slider', () => ({
+Alpine.data('slider', (targetEl = null) => ({
   slider: null,
   slide: 0,
   _slideCount: 0,
@@ -22,7 +22,12 @@ Alpine.data('slider', () => ({
   },
 
   init () {
-    this.slider = this.$el.querySelector('.w-slider')
+    if (targetEl) {
+      this.slider = document.querySelector(targetEl)
+    } else {
+      this.slider = this.$el.querySelector('.w-slider')
+    }
+
     if (!this.slider) {
       throw new Error('Missing slider component to target')
     }
@@ -59,7 +64,7 @@ Alpine.data('slider', () => ({
   }
 }))
 
-Alpine.data('tabs', () => ({
+Alpine.data('tabs', (targetEl = null) => ({
   tabs: null,
   tab: 0,
   _tabCount: 0,
@@ -81,7 +86,12 @@ Alpine.data('tabs', () => ({
   },
 
   init () {
-    this.tabs = this.$el.querySelector('.w-tabs')
+    if (targetEl) {
+      this.tabs = document.querySelector(targetEl)
+    } else {
+      this.tabs = this.$el.querySelector('.w-tabs')
+    }
+
     if (!this.tabs) {
       throw new Error('Missing tabs component to target')
     }

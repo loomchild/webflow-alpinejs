@@ -48,13 +48,13 @@ This script also simplifies interacting with built-in Webflow components, such a
 
 ### Slider
 
-Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `slider` value.
+Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `slider` value. You can also attach to any slider component on the page by passing it's selector as a parameter, e.g. `slider('#myslider')`.
 
 The component contains `slide` variable indicating current slide index (read/write) and `slideCount` variable (read-only). It also contains `nextSlide()` and `previousSlide()` convenience methods.
 
 ### Tabs
 
-Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `tabs` value.
+Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `tabs` value. You can also attach to any tabs component on the page by passing it's selector as a parameter, e.g. `tabs('#mytabs')`.
 
 The component contains `tab` variable indicating current tab index (read/write) and `tabCount` variable (read-only). It also contains `nextTab()` and `previousTab()` convenience methods.
 
