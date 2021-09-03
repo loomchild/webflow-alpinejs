@@ -11,7 +11,7 @@ function replaceByTemplate (el) {
   el.outerHTML = newOuterHTML
 }
 
-function replaceDotAttributes (el) {
+function getAlpineAttributes (el) {
   const alpineAttributes = []
   for (let i = 0; i < el.attributes.length; ++i) {
     const a = el.attributes[i]
@@ -19,8 +19,13 @@ function replaceDotAttributes (el) {
       alpineAttributes.push(a)
     }
   }
+  return alpineAttributes
+}
 
-  alpineAttributes.forEach(a => {
+function replaceDotAttributes (el) {
+  const attributes = getAlpineAttributes(el)
+
+  attributes.forEach(a => {
     const m = a.name.match(/^(x-[^:]+)(:.+)$/)
     if (m) {
       let newA = null
@@ -40,9 +45,20 @@ function replaceDotAttributes (el) {
   })
 }
 
+function removeUnnecessaryAttributeValues (el) {
+  const attributes = getAlpineAttributes(el)
+
+  attributes.forEach(a => {
+    if (a.name.match(/^x-transition.*(?!(enter|leave))/)) {
+      el.setAttribute(a.name, '')
+    }
+  })
+}
+
 function init () {
   document.querySelectorAll('[x-data] *').forEach((el) => {
     replaceDotAttributes(el)
+    removeUnnecessaryAttributeValues(el)
   })
 
   // Add templates, reverse to treat nested blocks before their parents.
