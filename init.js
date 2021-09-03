@@ -49,7 +49,7 @@ function removeUnnecessaryAttributeValues (el) {
   const attributes = getAlpineAttributes(el)
 
   attributes.forEach(a => {
-    if (a.name.match(/^x-transition.*(?!(enter|leave|blaaa))/)) {
+    if (a.name.match(/^x-transition.*(?!(enter|leave))/)) {
       el.setAttribute(a.name, '')
     }
   })
