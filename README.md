@@ -59,4 +59,4 @@ Wrap the slider in a Div Block and initialize the component by adding `x-data` a
 The component contains `tab` variable indicating current tab index (read/write) and `tabCount` variable (read-only). It also contains `nextTab()` and `previousTab()` convenience methods.
 
 ---
-For more information how to use Alpine.js please refer to [the official documentation](http://alpinejs.dev/). If you notice something not working as expected in Webflow, do not hesitate to report errors here.
+For more information how to use Alpine.js please refer to [the official documentation](http://alpinejs.dev/). If you notice something not working as expected in Webflow, do not hesitate to report errors [here](https://github.com/loomchild/webflow-alpinejs/issues).
