@@ -56,7 +56,7 @@ function removeUnnecessaryAttributeValues (el) {
 }
 
 function init () {
-  document.querySelectorAll('[x-data] *').forEach((el) => {
+  document.querySelectorAll('[x-data],[x-data] *').forEach((el) => {
     replaceDotAttributes(el)
     removeUnnecessaryAttributeValues(el)
   })
