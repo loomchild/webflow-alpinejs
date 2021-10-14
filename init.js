@@ -1,16 +1,5 @@
 import Alpine from 'alpinejs'
 
-function replaceByTemplate (el) {
-  const opening = new RegExp('^<' + el.tagName, 'i')
-  const closing = new RegExp('</' + el.tagName + '>$', 'i')
-
-  const newOuterHTML = el.outerHTML
-    .replace(opening, '<template')
-    .replace(closing, '</template>')
-
-  el.outerHTML = newOuterHTML
-}
-
 function getAlpineAttributes (el) {
   const alpineAttributes = []
   for (let i = 0; i < el.attributes.length; ++i) {
@@ -20,6 +9,19 @@ function getAlpineAttributes (el) {
     }
   }
   return alpineAttributes
+}
+
+function wrapInTemplate (el) {
+  const template = document.createElement('template')
+
+  const attributes = getAlpineAttributes(el)
+  attributes.forEach(a => {
+    template.setAttribute(a.name, a.value)
+    el.removeAttribute(a.name)
+  })
+
+  el.parentNode.insertBefore(template, el)
+  template.content.appendChild(el)
 }
 
 function replaceDotAttributes (el) {
@@ -61,8 +63,7 @@ function init () {
     removeUnnecessaryAttributeValues(el)
   })
 
-  // Add templates, reverse to treat nested blocks before their parents.
-  ;[...document.querySelectorAll('[x-data] [x-for], [x-data] [x-if]')].reverse().forEach(replaceByTemplate)
+  document.querySelectorAll('[x-data] [x-for], [x-data] [x-if]').forEach(wrapInTemplate)
 }
 
 window.Alpine = Alpine
