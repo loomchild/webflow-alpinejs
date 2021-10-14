@@ -10,12 +10,12 @@ You can also check a [demo site](https://webflow.com/website/alpinejs-demo) for 
 To initialize Alpine.js in Webflow add the following code at the bottom of the `<body>` element, either globally in Project Settings or via HTML Embed on each page.
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@1/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@2/dist/index.js"></script>
 ```
 
 Next, add the following style at the top of the `<body>` element via HTML Embed on each page:
 ```
-<link href="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@1/dist/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@2/dist/style.css" rel="stylesheet">
 ```
 
 ## Initialize a component
@@ -34,10 +34,10 @@ To add an event handler, add a `x-on` custom attribute (shorthand starting with 
 Attributes containing a dot `.` character in their name are not allowed in Webflow. To bypass this limitation, use another `:` character instead. For example, add `x-on:click:away` attribute with value `open = false`.
 
 ## Conditional statements
-In Webflow it's not possible to create a `<template>` element in the designer, and it is necessary for `x-if` conditionals. To solve this issue, this script automatically transforms any element containing `x-if` into `<template>`. For example we can create a conditional Div Block with `x-if` attribute with `open` value.
+In Webflow it's not possible to create a `<template>` element in the designer, and it is necessary for `x-if` conditionals. To solve this issue, this script automatically wraps any element containing `x-if` in a `<template>`. For example we can create a conditional Div Block with `x-if` attribute with `open` value.
 
 ## For loops
-Similarly to conditional statements, any element containing `x-for` is automatically converted to `<template>`. For example, to initialize a loop, simply create a div block with `x-for` attribute equal to `item in items`, and `x-bind:key` attribute with value `item`.
+Similarly to conditional statements, any element containing `x-for` is automatically wrapped in a `<template>`. For example, to initialize a loop, simply create a div block with `x-for` attribute equal to `item in items`, and `x-bind:key` attribute with value `item`.
 
 ## Cloak
 When refreshing the site, the hidden content is briefly displayed, creating an ugly flickering effect. To hide an element before Alpine.js is initialized, add an `x-cloak` attribute with any value to it. You can add `.uncloak` class to such element to make it temporarily visible during development.
