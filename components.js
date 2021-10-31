@@ -55,11 +55,13 @@ Alpine.data('slider', (targetEl = null) => ({
       setObserver(dot, index)
     })
 
+    this.$dispatch('update:slide', this.slide)
     this.$watch('slide', (index) => {
       const dot = this.slider.querySelector(`.w-slider-dot:nth-child(${index + 1})`)
       if (dot && !dot.classList.contains('w-active')) {
         dot.dispatchEvent(new MouseEvent('click', { view: window, bubbles: true, cancelable: true }))
       }
+      this.$dispatch('update:slide', index)
     })
   }
 }))
@@ -119,11 +121,13 @@ Alpine.data('tabs', (targetEl = null) => ({
       setObserver(tab, index)
     })
 
+    this.$dispatch('update:tab', this.tab)
     this.$watch('tab', (index) => {
       const tab = this.tabs.querySelector(`.w-tab-link:nth-child(${index + 1})`)
       if (tab && !tab.classList.contains('w--current')) {
         tab.dispatchEvent(new MouseEvent('click', { view: window, bubbles: true, cancelable: true }))
       }
+      this.$dispatch('update:tab', index)
     })
   }
 }))
