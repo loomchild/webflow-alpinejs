@@ -1,4 +1,5 @@
-html:not(.wf-design-mode) [x-cloak], html.wf-design-mode [x-cloak]:not(.uncloak) {
+html:not(.wf-design-mode) [x-cloak],
+html.wf-design-mode [x-cloak]:not(.uncloak):not([uncloak]) {
   display: none;
 }
 
