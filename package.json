@@ -5,7 +5,7 @@
   "scripts": {
     "build": "esbuild index.js style.css --bundle --minify --sourcemap --outdir=dist",
     "serve": "esbuild index.js style.css --bundle --outdir=dist --serve=8001",
-    "purge": "http post https://purge.jsdelivr.net path:='[\"/npm/@loomchild/webflow-alpinejs@1/dist/index.js\", \"/npm/@loomchild/webflow-alpinejs@1/dist/index.js.map\", \"/npm/@loomchild/webflow-alpinejs@1/dist/style.css\"]'",
+    "purge": "http post https://purge.jsdelivr.net path:='[\"/npm/@loomchild/webflow-alpinejs@2/dist/index.js\", \"/npm/@loomchild/webflow-alpinejs@2/dist/index.js.map\", \"/npm/@loomchild/webflow-alpinejs@2/dist/style.css\"]'",
     "prepublish": "npm run build",
     "postpublish": "npm run purge"
   },
