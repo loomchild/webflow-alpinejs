@@ -4,4 +4,8 @@ module.exports = {
   env: {
     browser: true
   }
+
+  globals: {
+    Alpine: 'readonly'
+  }
 }
