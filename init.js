@@ -32,9 +32,14 @@ function replaceDotAttributes (el) {
     if (m) {
       let newA = null
       if (['x-bind', 'x-on'].includes(m[1])) {
-        const suffix = m[2].substring(1)
+        let prefix = m[1]
+        let suffix = m[2].substring(1)
+        if (prefix === 'x-on' && suffix.startsWith('update:')) {
+          prefix += ':update'
+          suffix = suffix.substring(7)
+        }
         if (suffix.includes(':')) {
-          newA = m[1] + ':' + suffix.replace(/:/g, '.')
+          newA = prefix + ':' + suffix.replace(/:/g, '.')
         }
       } else {
         newA = m[1] + m[2].replace(/:/g, '.')

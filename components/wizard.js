@@ -7,10 +7,12 @@ document.addEventListener('alpine:init', () => {
 
       wizard.addEventListener('update:slide', (event) => {
         this.step = event.detail
-        if (scroll) {
-          wizard.scrollIntoView({ behavior: 'smooth' })
+        if (this.step > 0) {
+          if (scroll) {
+            wizard.scrollIntoView({ behavior: 'smooth' })
+          }
+          this.$dispatch('update:step', this.step)
         }
-        this.$dispatch('update:step', this.step)
       })
     },
 
