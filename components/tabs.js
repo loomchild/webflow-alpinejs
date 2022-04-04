@@ -24,7 +24,7 @@ document.addEventListener('alpine:init', () => {
       if (targetEl) {
         this.tabs = document.querySelector(targetEl)
       } else {
-        this.tabs = this.$el.querySelector('.w-tabs')
+        this.tabs = this.$el.classList.contains('w-tabs') ? this.$el : this.$el.querySelector('.w-tabs')
       }
 
       if (!this.tabs) {

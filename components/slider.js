@@ -24,7 +24,7 @@ document.addEventListener('alpine:init', () => {
       if (targetEl) {
         this.slider = document.querySelector(targetEl)
       } else {
-        this.slider = this.$el.querySelector('.w-slider')
+        this.slider = this.$el.classList.contains('w-slider') ? this.$el : this.$el.querySelector('.w-slider')
       }
 
       if (!this.slider) {
