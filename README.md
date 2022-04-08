@@ -2,7 +2,7 @@
 
 > A simple script to allow using [Alpine.js](https://github.com/alpinejs/alpine) in [Webflow](https://webflow.com/) designer.
 
-To learn the basic usage, read my related tutorial on [Medium](https://medium.com/@jareklipski/webflow-alpine-js-d53d77e3293). To interact with Webflow built-in components, check this article on [Medium](https://medium.com/@jareklipski/interacting-with-the-webflow-slider-component-using-alpine-js-c154885feaed).
+To learn the basic usage, read my ["Webflow + Alpine.js" tutorial](https://medium.com/@jareklipski/webflow-alpine-js-d53d77e3293). To interact with Webflow built-in components, see the ["Interacting with the Webflow Slider Component using Alpine.js" article](https://medium.com/@jareklipski/interacting-with-the-webflow-slider-component-using-alpine-js-c154885feaed).
 
 You can also check a [demo site](https://webflow.com/website/alpinejs-demo) for a live example.
 
@@ -48,15 +48,19 @@ This script also simplifies interacting with built-in Webflow components, such a
 
 ### Slider
 
-Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `slider` value. You can also attach to any slider component on the page by passing it's selector as a parameter, e.g. `slider('#myslider')`.
+Initialize the slider component by adding `x-data="slider"` attribute to it. Alternatively, attach to any slider component on the page by passing it's selector as a parameter, e.g. `slider('#myslider')`.
 
 The component contains `slide` variable indicating current slide index (read/write) and `slideCount` variable (read-only). It also contains `nextSlide()` and `previousSlide()` convenience methods.
 
 ### Tabs
 
-Wrap the slider in a Div Block and initialize the component by adding `x-data` attribute with `tabs` value. You can also attach to any tabs component on the page by passing it's selector as a parameter, e.g. `tabs('#mytabs')`.
+Initialize the tabs slider component by adding `x-data="tabs"` attribute to it. Alternatively, attach to any tabs component on the page by passing it's selector as a parameter, e.g. `tabs('#mytabs')`.
 
 The component contains `tab` variable indicating current tab index (read/write) and `tabCount` variable (read-only). It also contains `nextTab()` and `previousTab()` convenience methods.
+
+### Wizard
+
+This component is used to create multi-step forms. Add a form block component and place slider component in it. Initialize the wizard by adding `x-data="wizard"` attribute, and the slider by adding `x-data="slider"` attrbiute. More information about usage can be found in ["Implement a multi-step form in Webflow with Alpine.js" article](https://medium.com/webflow-sprinkles/implement-a-multi-step-form-in-webflow-with-alpine-js-2ec1a5308a6a).  
 
 ---
 For more information how to use Alpine.js please refer to [the official documentation](http://alpinejs.dev/). If you notice something not working as expected in Webflow, do not hesitate to report errors [here](https://github.com/loomchild/webflow-alpinejs/issues).
