@@ -1,6 +1,6 @@
 # webflow-alpinejs
 
-> A simple script to allow using [Alpine.js](https://github.com/alpinejs/alpine) in [Webflow](https://webflow.com/) designer.
+> A simple wrapper to use [Alpine.js](https://github.com/alpinejs/alpine) in [Webflow](https://webflow.com/) Designer.
 
 To learn the basic usage, read my ["Webflow + Alpine.js" tutorial](https://medium.com/@jareklipski/webflow-alpine-js-d53d77e3293). To interact with Webflow built-in components, see the ["Interacting with the Webflow Slider Component using Alpine.js" article](https://medium.com/@jareklipski/interacting-with-the-webflow-slider-component-using-alpine-js-c154885feaed).
 
