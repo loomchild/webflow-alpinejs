@@ -27,7 +27,8 @@
     "dist/*"
   ],
   "dependencies": {
-    "alpinejs": "^3.8.1"
+    "alpinejs": "^3.8.1",
+    "libphonenumber-js": "^1.9.51"
   },
   "devDependencies": {
     "esbuild": "^0.14.20",

@@ -1,7 +1,8 @@
 document.addEventListener('alpine:init', () => {
   Alpine.data('phone', ({ country } = {}) => ({
-    init () {
-      this.formatter = new libphonenumber.AsYouType(country) // eslint-disable-line no-undef
+    async init () {
+      const { AsYouType } = await import('libphonenumber-js/max')
+      this.formatter = new AsYouType(country)
     },
 
     input: {
