@@ -74,7 +74,7 @@ You can see the list of available components below (name of the file to be impor
 
 ### Phone
 
-This component is used to format and validate the phone number. Initialize it by adding `x-data="phone({ country: 'FR' })"` and `x-bind="input"` attributes to the phone field. Replace `FR` by default country code if the phone number if calling code is not provided. More information about usage can be found in the last section of ["Phone number validation and formatting in Webflow forms" article].
+This component is used to format and validate the phone number. Initialize it by adding `x-data="phone({ country: 'FR' })"` and `x-bind="input"` attributes to the phone field. Replace `FR` by default country code if the phone number if calling code is not provided. More information about usage can be found in the last section of ["Phone number validation and formatting in Webflow forms" article](https://medium.com/webflow-sprinkles/phone-number-validation-and-formatting-in-webflow-forms-9606eb1d8c33).
 
 ---
 For more information how to use Alpine.js please refer to [the official documentation](http://alpinejs.dev/). If you notice something not working as expected in Webflow, do not hesitate to report errors [here](https://github.com/loomchild/webflow-alpinejs/issues).
