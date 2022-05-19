@@ -1,6 +1,6 @@
 {
   "name": "@loomchild/webflow-alpinejs",
-  "version": "3.0.0",
+  "version": "2.2.0",
   "description": "A simple script to allow using Alpine.js in Webflow designer.",
   "scripts": {
     "build": "esbuild index.js style.css init.js components/* --bundle --minify --sourcemap --outdir=dist",
