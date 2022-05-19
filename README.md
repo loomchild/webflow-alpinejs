@@ -10,12 +10,12 @@ You can also check a [demo site](https://webflow.com/website/alpinejs-demo) for 
 To initialize Alpine.js in Webflow add the following code at the bottom of the `<body>` element, either globally in Project Settings or via HTML Embed on each page.
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@2/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@3/dist/index.js"></script>
 ```
 
 Next, add the following style at the top of the `<body>` element via HTML Embed on each page:
 ```
-<link href="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@2/dist/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@3/dist/style.css" rel="stylesheet">
 ```
 
 ## Initialize a component
