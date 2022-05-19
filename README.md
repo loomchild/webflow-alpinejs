@@ -10,12 +10,12 @@ You can also check a [demo site](https://webflow.com/website/alpinejs-demo) for 
 To initialize Alpine.js in Webflow add the following code at the bottom of the `<body>` element, either globally in Project Settings or via HTML Embed on each page.
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@3/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@2/dist/index.js"></script>
 ```
 
 Next, add the following style at the top of the `<body>` element via HTML Embed on each page:
 ```
-<link href="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@3/dist/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@2/dist/style.css" rel="stylesheet">
 ```
 
 ## Initialize a component
@@ -61,6 +61,20 @@ The component contains `tab` variable indicating current tab index (read/write) 
 ### Wizard
 
 This component is used to create multi-step forms. Add a form block component and place slider component in it. Initialize the wizard by adding `x-data="wizard"` attribute, and the slider by adding `x-data="slider"` attrbiute. More information about usage can be found in ["Implement a multi-step form in Webflow with Alpine.js" article](https://medium.com/webflow-sprinkles/implement-a-multi-step-form-in-webflow-with-alpine-js-2ec1a5308a6a).  
+
+## Additional components
+
+To reduce the bundle size, some components are not included in the library by default and need to be imported separately. For example to use the Phone component, import the library as follows (note that multiple files are combined and retrieved in one request by [jsDelivr](https://www.jsdelivr.com/features))
+
+```
+https://cdn.jsdelivr.net/npm/@loomchild/webflow-alpinejs@3/dist/index.js,npm/@loomchild/webflow-alpinejs@3/dist/components/phone.min.js
+```
+
+You can see the list of available components below (name of the file to be imported corresponds to the component name) or [select them via jsDelivr](https://www.jsdelivr.com/package/npm/@loomchild/webflow-alpinejs?path=dist%2Fcomponents).
+
+### Phone
+
+This component is used to format and validate the phone number. Initialize it by adding `x-data="phone('FR')"` and `x-bind="input"` attributes to the phone field. Replace `FR` by default country code if the phone number if calling code is not provided. More information about usage can be found in the last section of ["Phone number validation and formatting in Webflow forms" article].
 
 ---
 For more information how to use Alpine.js please refer to [the official documentation](http://alpinejs.dev/). If you notice something not working as expected in Webflow, do not hesitate to report errors [here](https://github.com/loomchild/webflow-alpinejs/issues).
